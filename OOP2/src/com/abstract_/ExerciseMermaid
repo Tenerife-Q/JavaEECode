@@ -1,0 +1,17 @@
+flowchart TD
+    A[Main.main] --> B[Game game = new Football]
+    B --> C[game.play]
+
+    subgraph "多态调用 - 运行时绑定"
+        C --> D{实际对象类型?}
+        D -->|Football| E[Football.initialize]
+        E --> F[Football.startPlay]
+        F --> G[Football.endPlay]
+
+        D -->|Basketball| H[Basketball.initialize]
+        H --> I[Basketball.startPlay]
+        I --> J[Basketball.endPlay]
+    end
+
+    K[编译时类型: Game] --> L[运行时类型: Football/Basketball]
+    L --> M[相同的接口<br>不同的实现]

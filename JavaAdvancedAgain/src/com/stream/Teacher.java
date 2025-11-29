@@ -1,0 +1,52 @@
+package com.stream;
+
+/**
+ * @author Tenerife
+ * Su san
+ * @date 2025/10/31 19:14
+ */
+public class Teacher {
+    private String name;
+    private int age;
+    private double salary;
+
+    public Teacher(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}' + "\n";
+    }
+}
