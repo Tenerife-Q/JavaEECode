@@ -75,11 +75,13 @@ public class CollectionTest {
 
         //1. 迭代器 如果有索引的集合可以使用上述两种 没有索引只能使用迭代器
         Iterator<String> it = list3.iterator();
+        //it.hasNext()判断是否还有未遍历的元素 本质上是确认当前位置是否存在元素
         while (it.hasNext()) {
-            String name = it.next();
+            String name = it.next();//it.next() 返回当前元素 并将迭代器位置后移
             if(name.contains("java")){
                 it.remove();//可以调用迭代器自己的remove 是考虑到这个问题了的
-                list3.remove(name);//不能集合调用remove，存在并发删除异常(ConcurrentModificationException) 详见源码remove()
+                //list3.remove(name);
+                //不能集合调用remove，存在并发删除异常(ConcurrentModificationException) 详见源码remove()
             }
         }
         System.out.println(list3);
